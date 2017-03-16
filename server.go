@@ -13,8 +13,9 @@ func HelloServer(w http.ResponseWriter, req *http.Request) {
 
 func main() {
   const port = ":8080"
-	// http.HandleFunc("/hello", HelloServer)
-	// log.Fatal(http.ListenAndServe(port, nil))
+  // log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("/src"))))
   log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("/Volumes/Martial-Soul/coding2/go-workspace/test-server/src"))))
+  // http.HandleFunc("/hello", HelloServer)
+  // log.Fatal(http.ListenAndServe(port, nil))
   // fmt.Printf("Listening on port: ", port)
 }
